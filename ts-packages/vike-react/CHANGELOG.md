@@ -1,5 +1,14 @@
 # @techmely/vike-react
 
+## 2.1.1
+
+### Patch Changes
+
+- Upgrade deps
+
+- Updated dependencies []:
+  - @techmely/utils@3.2.1
+
 ## 2.1.0
 
 ### Minor Changes

@@ -1,5 +1,11 @@
 # @techmely/nuxt-partytown
 
+## 1.0.9
+
+### Patch Changes
+
+- Upgrade deps
+
 ## 1.0.8
 
 ### Patch Changes

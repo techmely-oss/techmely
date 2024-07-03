@@ -1,6 +1,5 @@
 import type { EntityId, StringEnum } from "@techmely/types";
 import type { FC, PropsWithChildren, ReactNode } from "react";
-import { Root } from "react-dom/client";
 import type { PageContext } from "vike/types";
 
 type PageProps = Record<string, any>;

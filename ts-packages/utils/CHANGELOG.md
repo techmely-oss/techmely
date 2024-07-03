@@ -1,5 +1,11 @@
 # @techmely/utils
 
+## 3.2.1
+
+### Patch Changes
+
+- Upgrade deps
+
 ## 3.2.0
 
 ### Minor Changes

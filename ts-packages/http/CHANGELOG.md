@@ -1,5 +1,14 @@
 ## 1.0.0
 
+## 1.2.9
+
+### Patch Changes
+
+- Upgrade deps
+
+- Updated dependencies []:
+  - @techmely/utils@3.2.1
+
 ## 1.2.8
 
 ### Patch Changes
