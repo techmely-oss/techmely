@@ -1,6 +1,6 @@
 {
   "name": "@techmely/usage-limit",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "Techmely usage limit",
   "author": "Harry Tran <nhattq.coding@gmail.com>",
   "license": "MIT",
@@ -20,7 +20,9 @@
     "directory": "dist",
     "tag": "latest"
   },
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "peerDependencies": {
     "@techmely/logger": "workspace:*",
     "@techmely/metrics": "workspace:*",
@@ -33,7 +35,7 @@
     "tslib": "2.6.3",
     "tsup": "8.1.0",
     "typescript": "5.5.3",
-    "valibot": "0.30.0"
+    "valibot": "^0.35.0"
   },
   "funding": [
     {
@@ -45,5 +47,8 @@
       "url": "https://www.patreon.com/harrytran998"
     }
   ],
-  "keywords": ["techmely", "usage-limit"]
+  "keywords": [
+    "techmely",
+    "usage-limit"
+  ]
 }

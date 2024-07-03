@@ -1,6 +1,6 @@
 {
   "name": "@techmely/vike-island",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "homepage": "https://techmely.com/libraries/vike-island",
   "bugs": {
     "url": "https://github.com/techmely/techmely/issues"
@@ -10,7 +10,9 @@
   "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "peerDependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -35,7 +37,11 @@
       "url": "https://www.patreon.com/techmely"
     }
   ],
-  "keywords": ["techmely", "techmely-react", "vike react"],
+  "keywords": [
+    "techmely",
+    "techmely-react",
+    "vike react"
+  ],
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",

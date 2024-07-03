@@ -1,6 +1,6 @@
 {
   "name": "@techmely/vue-pinia-persist",
-  "version": "1.0.17",
+  "version": "1.0.18",
   "description": "Persist and rehydrate pinia store",
   "homepage": "https://about.techmely.com/libraries/vue-pinia-persist",
   "bugs": {
@@ -14,7 +14,9 @@
   "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "dependencies": {
     "@techmely/utils": "workspace:*"
   },

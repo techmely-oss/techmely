@@ -1,6 +1,6 @@
 {
   "name": "@techmely/auth",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Techmely auth's utils solutions",
   "author": "Harry Tran <nhattq.coding@gmail.com>",
   "license": "MIT",
@@ -39,5 +39,8 @@
       "url": "https://www.patreon.com/harrytran998"
     }
   ],
-  "keywords": ["techmely", "cache"]
+  "keywords": [
+    "techmely",
+    "cache"
+  ]
 }

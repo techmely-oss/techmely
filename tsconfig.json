@@ -12,6 +12,9 @@
       "path": "ts-packages/domain-driven"
     },
     {
+      "path": "ts-packages/hono"
+    },
+    {
       "path": "ts-packages/http"
     },
     {
