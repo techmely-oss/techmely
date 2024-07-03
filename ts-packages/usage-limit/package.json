@@ -24,15 +24,15 @@
   "peerDependencies": {
     "@techmely/logger": "workspace:*",
     "@techmely/metrics": "workspace:*",
-    "valibot": "^0.30.0"
+    "valibot": "^0.35.0"
   },
   "devDependencies": {
-    "@cloudflare/workers-types": "4.20240512.0",
+    "@cloudflare/workers-types": "4.20240620.0",
     "@techmely/logger": "workspace:*",
     "@techmely/metrics": "workspace:*",
-    "tslib": "2.6.2",
-    "tsup": "8.0.2",
-    "typescript": "5.4.5",
+    "tslib": "2.6.3",
+    "tsup": "8.1.0",
+    "typescript": "5.5.3",
     "valibot": "0.30.0"
   },
   "funding": [

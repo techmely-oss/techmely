@@ -17,8 +17,8 @@
     "@techmely/utils": "workspace:*",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-streaming": "^0.3.28",
-    "vike": "^0.4.171"
+    "react-streaming": "^0.3.35",
+    "vike": "^0.4.177"
   },
   "devDependencies": {
     "@types/react": "^18.2.0",
@@ -26,9 +26,9 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-streaming": "0.3.28",
-    "tsup": "8.0.2",
-    "typescript": "5.4.5",
-    "vike": "^0.4.171"
+    "tsup": "8.1.0",
+    "typescript": "5.5.3",
+    "vike": "^0.4.177"
   },
   "publishConfig": {
     "access": "public",

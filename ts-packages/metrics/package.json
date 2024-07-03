@@ -22,7 +22,7 @@
   },
   "files": ["dist"],
   "peerDependencies": {
-    "@axiomhq/js": "^1.0.0-rc.3"
+    "@axiomhq/js": "^1.0.0"
   },
   "peerDependenciesMeta": {
     "@axiomhq/js": {
@@ -30,11 +30,11 @@
     }
   },
   "devDependencies": {
-    "@axiomhq/js": "^1.0.0-rc.3",
+    "@axiomhq/js": "^1.0.0",
     "@techmely/types": "workspace:*",
-    "tslib": "2.6.2",
-    "tsup": "8.0.2",
-    "typescript": "5.4.5"
+    "tslib": "2.6.3",
+    "tsup": "8.1.0",
+    "typescript": "5.5.3"
   },
   "funding": [
     {

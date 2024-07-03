@@ -212,6 +212,7 @@ describe("Value Object", () => {
     interface Props {
       value: string;
     }
+    // biome-ignore lint/complexity/noStaticOnlyClass: <explanation>
     class Simple extends ValueObject<Props> {
       static override create(props: Props): IResult<Simple> {
         return Result.Ok(new Simple(props));

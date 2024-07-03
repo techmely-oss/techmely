@@ -1,7 +1,7 @@
 import { isNotEmpty, isPrimitive } from "@techmely/utils";
-import type { ValueObjectOptions, ValueObjectPort } from "./types";
-import type { IResult } from "../../utils/result/types";
 import { Result } from "../../utils";
+import type { IResult } from "../../utils/result/types";
+import type { ValueObjectOptions, ValueObjectPort } from "./types";
 
 export class ValueObject<Props> implements ValueObjectPort<Props> {
   #props: Props;

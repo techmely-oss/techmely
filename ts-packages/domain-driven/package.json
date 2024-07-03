@@ -20,21 +20,19 @@
     "directory": "dist",
     "tag": "latest"
   },
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "dependencies": {
     "@techmely/utils": "workspace:*",
-    "base-x": "^4.0.0"
+    "base-x": "^5.0.0"
   },
   "devDependencies": {
     "@techmely/types": "workspace:*",
     "@techmely/http": "workspace:*",
-    "tseep": "1.2.1",
-    "tslib": "2.6.2",
-    "tsup": "8.0.2",
-    "ts-essentials": "10.0.0",
-    "typescript": "5.4.5"
+    "tseep": "1.2.2",
+    "tslib": "2.6.3",
+    "tsup": "8.1.0",
+    "ts-essentials": "10.0.1",
+    "typescript": "5.5.3"
   },
   "funding": [
     {
@@ -46,8 +44,5 @@
       "url": "https://www.patreon.com/harrytran998"
     }
   ],
-  "keywords": [
-    "techmely",
-    "domain driven design"
-  ]
+  "keywords": ["techmely", "domain driven design"]
 }

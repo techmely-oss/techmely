@@ -1,4 +1,4 @@
-import type { Records, EntityId } from "@techmely/types";
+import type { EntityId, Records } from "@techmely/types";
 import type { UniqueEntityID } from "./unique-entity";
 
 export interface BaseEntityProps {
