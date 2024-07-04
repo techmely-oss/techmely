@@ -1,5 +1,11 @@
 # @techmely/types
 
+## 1.7.0
+
+### Minor Changes
+
+- Add default expose ts-essential in types
+
 ## 1.6.10
 
 ### Patch Changes

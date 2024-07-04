@@ -1,3 +1,5 @@
+export * from "ts-essentials";
+
 export * from "./literalType";
 export * from "./common";
 export * from "./cache.port";
