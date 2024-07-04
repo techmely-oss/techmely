@@ -7,7 +7,9 @@
     "type": "git",
     "url": "https://github.com/techmely/techmely.git"
   },
-  "workspaces": ["ts-packages/*"],
+  "workspaces": [
+    "ts-packages/*"
+  ],
   "scripts": {
     "postinstall": "node scripts/postinstall.mjs",
     "build": "moon :build",
@@ -34,7 +36,6 @@
     "@playwright/test": "1.45.1",
     "@testing-library/jest-dom": "6.4.6",
     "@testing-library/react": "16.0.0",
-    "@total-typescript/ts-reset": "0.5.1",
     "@types/bun": "1.1.6",
     "@types/node": "20.14.9",
     "@types/react": "18.2.0",
@@ -70,8 +71,14 @@
   "jscpd": {
     "threshold": 0.1,
     "pattern": "ts-packages/**/src/**/*.ts",
-    "reporters": ["html", "console"],
-    "ignore": ["**/__snapshots__/**", "ts-packages/**/test/**/*.ts"],
+    "reporters": [
+      "html",
+      "console"
+    ],
+    "ignore": [
+      "**/__snapshots__/**",
+      "ts-packages/**/test/**/*.ts"
+    ],
     "absolute": true,
     "gitignore": true
   },

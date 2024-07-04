@@ -15,7 +15,8 @@
     "src"
   ],
   "dependencies": {
-    "ts-essentials": "10.0.1"
+    "ts-essentials": "10.0.1",
+    "@total-typescript/ts-reset": "0.5.1"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "4.20240620.0",

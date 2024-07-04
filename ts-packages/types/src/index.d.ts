@@ -1,5 +1,6 @@
-export * from "ts-essentials";
+import "@total-typescript/ts-reset";
 
+export * from "ts-essentials";
 export * from "./literalType";
 export * from "./common";
 export * from "./cache.port";
