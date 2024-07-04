@@ -1,5 +1,11 @@
 # @techmely/types
 
+## 1.8.0
+
+### Minor Changes
+
+- Add ts reset to types package
+
 ## 1.7.0
 
 ### Minor Changes
