@@ -151,6 +151,7 @@ export * from "./ranking";
 export * from "./removeWhitespace";
 export * from "./runHeavyAsyncFn";
 export * from "./scrollToTop";
+export * from "./semaphore";
 export * from "./stringifyQueryObject";
 export * from "./throttle";
 export * from "./toISOStringTimezone";
