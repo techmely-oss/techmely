@@ -1,49 +1,50 @@
-import {
-  type ComponentType,
-  type ReactNode,
+import React, {
+  Suspense,
+  forwardRef,
   lazy,
-  startTransition,
   useEffect,
   useState,
+  type ComponentProps,
+  type ComponentType,
+  type ReactNode,
 } from "react";
 
-export function ClientOnly<T>({
-  load,
-  children,
-  fallback,
-  deps = [],
-}: {
-  load: () => Promise<{ default: ComponentType<T> } | ComponentType<T>>;
-  children: (Component: ComponentType<T>) => ReactNode;
-  fallback: ReactNode;
-  deps?: Parameters<typeof useEffect>[1];
-}) {
-  const [Component, setComponent] = useState<ComponentType<unknown> | null>(null);
+export function clientOnly<T extends ComponentType<any>>(
+  load: () => Promise<{ default: T } | T>,
+): ComponentType<ComponentProps<T> & { fallback?: ReactNode }> {
+  // Client side: always bundled by Vite, import.meta.env.SSR === false
+  // Server side: may or may not be bundled by Vite, import.meta.env.SSR === true || import.meta.env === undefined
+  //@ts-expect-error
+  import.meta.env ??= { SSR: true };
+  if (import.meta.env.SSR) {
+    return (props) => <>{props.fallback}</>;
+  }
 
-  // biome-ignore lint/correctness/useExhaustiveDependencies: we need this
-  useEffect(() => {
-    const loadComponent = () => {
-      const Component = lazy(() =>
-        // @ts-expect-error I knew ok
-        load()
-          .then((LoadedComponent) => {
-            return {
-              default: () =>
-                children("default" in LoadedComponent ? LoadedComponent.default : LoadedComponent),
-            };
-          })
-          .catch((error) => {
-            console.error("Component loading failed:", error);
-            return { default: () => <p>Error loading component.</p> };
-          }),
-      );
-      setComponent(Component);
-    };
+  const Component = lazy(() =>
+    load()
+      .then((LoadedComponent) =>
+        "default" in LoadedComponent ? LoadedComponent : { default: LoadedComponent },
+      )
+      .catch((error) => {
+        console.error("Component loading failed:", error);
+        return { default: (() => <p>Error loading component.</p>) as any };
+      }),
+  );
 
-    startTransition(() => {
-      loadComponent();
-    });
-  }, deps);
-
-  return Component ? <Component /> : fallback;
+  return forwardRef<any, any>((props, ref) => {
+    const [mounted, setMounted] = useState(false);
+    useEffect(() => {
+      setMounted(true);
+    }, []);
+    if (!mounted) {
+      return <>{props.fallback}</>;
+    }
+    const { fallback, ...rest } = props;
+    return (
+      // biome-ignore lint/complexity/noUselessFragments: <explanation>
+      <Suspense fallback={<>{props.fallback}</>}>
+        <Component {...rest} ref={ref} />
+      </Suspense>
+    );
+  }) as ComponentType<ComponentProps<T> & { fallback?: ReactNode }>;
 }

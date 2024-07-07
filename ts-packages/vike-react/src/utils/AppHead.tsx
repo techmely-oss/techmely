@@ -7,7 +7,7 @@ const robotsMap = ({ follow, index }: HeadMetaRobots) => ({
 });
 
 function generateAppHead(pageContext: PageContext): any {
-  const head = pageContext.config?.Head || pageContext?.Head || {};
+  const head = pageContext?.config?.Head || pageContext?.Head || {};
   const title = head?.title || "Make your dream come true - Techmely";
   const description = head?.description || "Create the talents - To the path of liberation";
 
@@ -65,7 +65,7 @@ function generateAppHead(pageContext: PageContext): any {
         "sameAs": ["https://www.facebook.com/techmely"]
       }
     </script>
-    ${jsonLd || ""}
+    ${jsonLd && jsonLd.length > 0 ? "" : ""}
     `;
   return appHead;
 }

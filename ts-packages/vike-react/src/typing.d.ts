@@ -36,7 +36,6 @@ declare global {
        *
        */
       stream?: boolean;
-      _streamIsRequired?: boolean;
       data?: Record<string, any>;
       isr?: boolean | { expiration: number };
       abortReason?: string | { notAdmin: true };
@@ -51,7 +50,10 @@ declare global {
        */
       ssr?: boolean;
       renderMode?: RenderMode;
-      // https://github.com/vikejs/vike-react/pull/96
+      /**
+       * Client-side hook called before the page is rendered.
+       */
+      onBeforeRenderClient?: (pageContext: PageContextClient) => void;
       onAfterRenderClient?: (pageContext: PageContextClient) => void;
     }
   }
@@ -173,6 +175,6 @@ declare global {
         {"@context": "http://schema.org"}
        </script>
      */
-    jsonLd?: string;
+    jsonLd?: string[];
   }
 }

@@ -5,8 +5,9 @@ import { AppPage } from "./utils/App";
 
 let app: Root;
 const onRenderClient: OnRenderClientSync = (pageContext) => {
-  const page = AppPage(pageContext) as ReactNode;
+  pageContext.config.onBeforeRenderClient?.(pageContext);
 
+  const page = AppPage(pageContext) as ReactNode;
   const container = document.getElementById("root");
   if (!container) throw new Error("Aww - No root element - No app");
   if (container.innerHTML !== "" && pageContext.isHydration) {

@@ -28,7 +28,7 @@ if (!isProd) {
 }
 
 const config = {
-  name: "vike-react",
+  name: "@techmely/vike-react",
   passToClient,
   clientRouting: true,
   hydrationCanBeAborted: true,

@@ -110,6 +110,7 @@ export * from "./isSupportAbortController";
 export * from "./isSupportsFormData";
 export * from "./isSupportsRequestStreams";
 export * from "./isSupportsResponseStreams";
+export * from "./jsonLd";
 export * from "./isSymbol";
 export * from "./isToday";
 export * from "./isUndefined";
