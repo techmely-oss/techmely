@@ -64,6 +64,24 @@ export type HttpOptions = {
   searchParams?: HttpSearchParams;
 
   /**
+	A prefix to prepend to the `input` URL when making the request. It can be any valid URL, either relative or absolute. A trailing slash `/` is optional and will be added automatically, if needed, when it is joined with `input`. Only takes effect when `input` is a string. The `input` argument cannot start with a slash `/` when using this option.
+
+	Useful when used with [`http.extend()`](#httpextenddefaultoptions) to create niche-specific http-instances.
+
+	Notes:
+	 - After `url` and `input` are joined, the result is resolved against the [base URL](https://developer.mozilla.org/en-US/docs/Web/API/Node/baseURI) of the page (if any).
+	 - Leading slashes in `input` are disallowed when using this option to enforce consistency and avoid confusion about how the `input` URL is handled, given that `input` will not follow the normal URL resolution rules when `baseUrl` is being used, which changes the meaning of a leading slash.
+
+	@example
+	```
+	import http from '@techmely/http';
+
+	const response = await http('articles', { baseUrl: 'https://example.com' });
+	//=> 'https://example.com/articles'
+	```
+	*/
+  baseUrl?: URL | string;
+  /**
 	  An object representing `limit`, `methods`, `statusCodes` and `maxRetryAfter` fields for maximum retry count, allowed methods, allowed status codes and maximum [`Retry-After`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Retry-After) time.
 
 	  If `retry` is a number, it will be used as `limit` and other defaults will remain in place.
@@ -102,10 +120,6 @@ export type HttpOptions = {
 	*/
   hooks?: HttpHooks;
 
-  /**
-	Hooks allow modifications during the request lifecycle. Hook functions may be async and are run serially.
-	*/
-  interceptors?: HttpInterceptors;
   /**
 	User-defined `fetch` function.
 	Has to be fully compatible with the [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) standard.
