@@ -43,7 +43,6 @@ const config = {
     locale: { env: serverClient },
     isr: { env: serverOnly },
     stream: { env: serverOnly },
-    _streamIsRequied: { env: serverOnly },
     ssr: {
       env: { config: true },
       effect: ({ configValue }) => {
@@ -69,6 +68,7 @@ const config = {
     plugins: { env: serverClient },
     initStoreState: { env: serverClient },
     onAfterRenderClient: { env: clientOnly },
+    onBeforeRenderClient: { env: clientOnly },
   },
   locale: "en",
   renderMode: "SSR",

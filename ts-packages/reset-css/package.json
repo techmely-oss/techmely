@@ -5,11 +5,7 @@
   "author": "Harry Tran <nhattq.coding@gmail.com>",
   "license": "MIT",
   "repository": "https://github.com/techmely/essential-packages/tree/dev/ts-packages/types",
-  "files": [
-    ".",
-    "./reset.css",
-    "./reset.min.css"
-  ],
+  "files": [".", "./reset.css", "./reset.min.css"],
   "exports": {
     ".": {
       "default": "./reset.css"
@@ -31,10 +27,7 @@
   "bugs": {
     "url": "https://github.com/techmely/techmely/issues"
   },
-  "keywords": [
-    "techmely",
-    "reset-css"
-  ],
+  "keywords": ["techmely", "reset-css"],
   "publishConfig": {
     "access": "public",
     "directory": "dist",

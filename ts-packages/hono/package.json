@@ -1,7 +1,7 @@
 {
   "name": "@techmely/hono",
   "description": "Techmely Hono Package",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "homepage": "https://about.techmely.com/products",
   "bugs": {
     "url": "https://github.com/techmely/techmely/issues"
@@ -16,11 +16,7 @@
   "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "files": [
-    "dist",
-    "README.md",
-    "CHANGELOG.md"
-  ],
+  "files": ["dist", "README.md", "CHANGELOG.md"],
   "peerDependencies": {
     "@techmely/utils": "workspace:*",
     "@techmely/auth": "workspace:*",

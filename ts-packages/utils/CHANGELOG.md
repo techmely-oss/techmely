@@ -1,5 +1,11 @@
 # @techmely/utils
 
+## 3.3.0
+
+### Minor Changes
+
+- [`93340fa`](https://github.com/techmely/essential-packages/commit/93340fab455bf57fd852703bdd589c88d0e5c8c0) Thanks [@harrytran998](https://github.com/harrytran998)! - Add json ld feature
+
 ## 3.2.1
 
 ### Patch Changes

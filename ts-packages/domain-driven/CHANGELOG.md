@@ -1,5 +1,12 @@
 # @techmely/domain-driven
 
+## 1.1.4
+
+### Patch Changes
+
+- Updated dependencies [[`93340fa`](https://github.com/techmely/essential-packages/commit/93340fab455bf57fd852703bdd589c88d0e5c8c0)]:
+  - @techmely/utils@3.3.0
+
 ## 1.1.3
 
 ### Patch Changes

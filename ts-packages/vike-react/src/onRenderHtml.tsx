@@ -1,4 +1,4 @@
-import { StrictMode, type ReactNode } from "react";
+import { type ReactNode, StrictMode } from "react";
 import { renderToString } from "react-dom/server";
 import { renderToStream } from "react-streaming/server";
 import { dangerouslySkipEscape, escapeInject } from "vike/server";

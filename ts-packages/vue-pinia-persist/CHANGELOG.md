@@ -1,5 +1,12 @@
 # @techmely/vue-pinia-persist
 
+## 1.0.19
+
+### Patch Changes
+
+- Updated dependencies [[`93340fa`](https://github.com/techmely/essential-packages/commit/93340fab455bf57fd852703bdd589c88d0e5c8c0)]:
+  - @techmely/utils@3.3.0
+
 ## 1.0.18
 
 ### Patch Changes

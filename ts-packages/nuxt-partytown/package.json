@@ -19,9 +19,7 @@
   },
   "main": "./dist/module.cjs",
   "types": "./dist/types.d.ts",
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "dependencies": {
     "@builder.io/partytown": "^0.10.2",
     "@nuxt/kit": "^3.12.3"
