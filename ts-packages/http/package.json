@@ -1,6 +1,6 @@
 {
   "name": "@techmely/http",
-  "version": "1.2.9",
+  "version": "1.2.11",
   "description": "Techmely Http",
   "author": "Harry Tran <nhattq.coding@gmail.com>",
   "license": "MIT",
@@ -20,9 +20,7 @@
     "directory": "dist",
     "tag": "latest"
   },
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "dependencies": {
     "@techmely/utils": "workspace:*"
   },
@@ -42,8 +40,5 @@
       "url": "https://www.patreon.com/harrytran998"
     }
   ],
-  "keywords": [
-    "techmely",
-    "http"
-  ]
+  "keywords": ["techmely", "http"]
 }

@@ -159,13 +159,13 @@ export interface HttpFetchHookOptions extends RequestInit {
 export type HttpBeforeRequestHook = (
   request: Request,
   options: HttpFetchHookOptions,
-) => Request | Response | VoidFunction | Promise<Request | Response | VoidFunction>;
+) => Request | Response | void | Promise<Request | Response | void>;
 
 export type HttpAfterResponseHook = (
   request: Request,
   options: HttpFetchHookOptions,
   response: Response,
-) => Response | VoidFunction | Promise<Response | VoidFunction>;
+) => Response | void | Promise<Response | void>;
 
 export type HttpBeforeErrorHook = (error: HttpError) => HttpError | Promise<HttpError>;
 
