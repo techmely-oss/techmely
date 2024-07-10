@@ -16,7 +16,11 @@
   "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "files": ["dist", "README.md", "CHANGELOG.md"],
+  "files": [
+    "dist",
+    "README.md",
+    "CHANGELOG.md"
+  ],
   "peerDependencies": {
     "@techmely/utils": "workspace:*",
     "@techmely/auth": "workspace:*",
