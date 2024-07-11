@@ -1,5 +1,11 @@
 # @techmely/vike-react
 
+## 2.2.1
+
+### Patch Changes
+
+- Fix typing + cleanup code
+
 ## 2.2.0
 
 ### Minor Changes

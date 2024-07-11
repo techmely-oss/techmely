@@ -1,5 +1,14 @@
 # @techmely/vike-react-query
 
+## 4.2.1
+
+### Patch Changes
+
+- Fix typing + cleanup code
+
+- Updated dependencies []:
+  - @techmely/vike-react@2.2.1
+
 ## 4.2.0
 
 ### Minor Changes
