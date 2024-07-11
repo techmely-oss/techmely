@@ -1,6 +1,6 @@
 {
   "name": "@techmely/vike-react-query",
-  "version": "4.2.2",
+  "version": "4.2.3",
   "homepage": "https://about.techmely.com/libraries/vike-react-query",
   "bugs": {
     "url": "https://github.com/techmely/essential-packages/issues"
@@ -51,5 +51,12 @@
     "techmely",
     "techmely-react",
     "vike react"
-  ]
+  ],
+  "typesVersions": {
+    "*": {
+      "+config": [
+        "./dist/_config.d.ts"
+      ]
+    }
+  }
 }

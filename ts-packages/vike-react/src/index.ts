@@ -1,3 +1,2 @@
-export * from "./ClientOnly";
-export * from "./config";
+export { default } from "./+config";
 export * from "./typing.d";
