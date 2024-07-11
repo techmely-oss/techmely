@@ -1,21 +1,29 @@
-import { type DehydratedState, type QueryClient, dehydrate, hydrate } from "@tanstack/react-query";
+import {
+  type DehydratedState,
+  type QueryClient,
+  dehydrate,
+  hydrate,
+} from "@tanstack/react-query";
 import { uneval } from "devalue";
-import type React from "react";
-import type { PropsWithChildren } from "react";
+import React, { type ReactNode } from "react";
 import { useStream } from "react-streaming";
 
 declare global {
   interface Window {
-    __reactQueryDehydrated__?: { push: (entry: DehydratedState) => void } | DehydratedState[];
+    __reactQueryDehydrated__?:
+      | { push: (entry: DehydratedState) => void }
+      | DehydratedState[];
     __reactQueryClear__?: () => void;
   }
 }
 
-type Props = {
+function StreamedHydration({
+  children,
+  client,
+}: {
   client: QueryClient;
-};
-
-export const StreamedHydration: React.FC<PropsWithChildren<Props>> = ({ children, client }) => {
+  children: ReactNode;
+}) {
   const stream = useStream();
   const isSSR = !!stream;
 
@@ -55,11 +63,13 @@ export const StreamedHydration: React.FC<PropsWithChildren<Props>> = ({ children
       hydrate(client, entry);
     };
 
-    for (const entry of window.__reactQueryDehydrated__) {
+    for (const entry of window.__reactQueryDehydrated__ as DehydratedState[]) {
       handleEntry(entry);
     }
 
     window.__reactQueryDehydrated__ = { push: handleEntry };
   }
-  return children;
-};
+  return children as JSX.Element;
+}
+
+export default StreamedHydration;

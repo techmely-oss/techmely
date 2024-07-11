@@ -1,8 +1,8 @@
-import { type ReactNode, StrictMode } from "react";
+import React, { StrictMode } from "react";
 import { renderToString } from "react-dom/server";
 import { renderToStream } from "react-streaming/server";
 import { dangerouslySkipEscape, escapeInject } from "vike/server";
-import type { OnRenderHtmlAsync } from "vike/types";
+import type { OnRenderHtmlAsync, PageContext } from "vike/types";
 import { AppPage } from "./utils/App";
 import generateAppHead from "./utils/AppHead";
 import { AppScriptBody } from "./utils/AppScriptBody";
@@ -11,29 +11,9 @@ import { getMetaHtml } from "./utils/getMetaHtml";
 addEcosystemStamp();
 
 const onRenderHtml: OnRenderHtmlAsync = async (pageContext) => {
-  const appHead = dangerouslySkipEscape(
-    renderToString(<StrictMode>{generateAppHead(pageContext)}</StrictMode>),
-  );
-  const { stream } = pageContext.config || {};
-  const lang = pageContext?.metadata?.locale || pageContext?.locale || "en";
+  const { appHead, lang } = getHeadHtml(pageContext);
   const metaHtml = getMetaHtml(pageContext);
-
-  let pageHtml:
-    | string
-    | ReturnType<typeof dangerouslySkipEscape>
-    | Awaited<ReturnType<typeof renderToStream>>;
-
-  const page = AppPage(pageContext) as ReactNode;
-  if (!stream) {
-    pageHtml = dangerouslySkipEscape(renderToString(page));
-  } else {
-    const disable = (stream as boolean) === false ? true : undefined;
-    pageHtml = await renderToStream(page, {
-      webStream: typeof stream === "string" ? stream === "web" : undefined,
-      userAgent: pageContext.metadata?.userAgent,
-      disable,
-    });
-  }
+  const pageHtml = await getPageHtml(pageContext);
 
   const documentHtml = escapeInject`<!DOCTYPE html>
     <html lang="${lang}" ${metaHtml}>
@@ -50,6 +30,37 @@ const onRenderHtml: OnRenderHtmlAsync = async (pageContext) => {
     },
   };
 };
+
+function getHeadHtml(pageContext: PageContext) {
+  const appHead = dangerouslySkipEscape(
+    renderToString(<StrictMode>{generateAppHead(pageContext)}</StrictMode>),
+  );
+  const lang = pageContext?.metadata?.locale || pageContext?.locale || "en";
+  return { appHead, lang };
+}
+
+async function getPageHtml(pageContext: PageContext) {
+  let pageHtml:
+    | string
+    | ReturnType<typeof dangerouslySkipEscape>
+    | Awaited<ReturnType<typeof renderToStream>>;
+  const { stream } = pageContext.config || {};
+
+  const page = AppPage(pageContext);
+  if (!stream) {
+    pageHtml = dangerouslySkipEscape(renderToString(page));
+  } else {
+    const disable = (stream as boolean) === false ? true : undefined;
+    pageHtml = await renderToStream(page, {
+      webStream: typeof stream === "string" ? stream === "web" : undefined,
+      userAgent:
+        pageContext.headers?.["user-agent"] || pageContext.metadata?.userAgent,
+      disable,
+    });
+  }
+  return pageHtml;
+}
+
 // For improving error messages of:
 // - react-streaming https://github.com/brillout/react-streaming/blob/6a43dd20c27fb5d751dca41466b06ee3f4f35462/src/server/useStream.ts#L21
 // - vike https://github.com/vikejs/vike/blob/96c0155380ffebd4976ab076b58e86d8eb2d603a/vike/node/runtime/html/stream/react-streaming.ts#L31

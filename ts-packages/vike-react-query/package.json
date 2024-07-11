@@ -47,10 +47,9 @@
       "url": "https://www.patreon.com/techmely"
     }
   ],
-  "keywords": ["techmely", "techmely-react", "vike react"],
-  "typesVersions": {
-    "*": {
-      "+config": ["./dist/_config.d.ts"]
-    }
-  }
+  "keywords": [
+    "techmely",
+    "techmely-react",
+    "vike react"
+  ]
 }
