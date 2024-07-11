@@ -5,4 +5,4 @@ tasks:
   build:
     options:
       mergeArgs: "replace"
-    args: "--entry src/index.ts --entry src/+config.ts --entry src/ReactQueryProvider.tsx --entry src/FallbackErrorBoundary.tsx --sourcemap --clean --dts --format esm --tsconfig tsconfig.build.json"
+    args: "--entry src/index.ts --entry src/config.ts --entry src/ReactQueryProvider.tsx --entry src/FallbackErrorBoundary.tsx --sourcemap --clean --dts --format esm --tsconfig tsconfig.build.json"

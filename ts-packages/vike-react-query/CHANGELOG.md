@@ -1,5 +1,14 @@
 # @techmely/vike-react-query
 
+## 4.2.2
+
+### Patch Changes
+
+- Fix typing + export
+
+- Updated dependencies []:
+  - @techmely/vike-react@2.2.2
+
 ## 4.2.1
 
 ### Patch Changes
