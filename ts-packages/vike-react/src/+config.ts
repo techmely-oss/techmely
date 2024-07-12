@@ -21,7 +21,7 @@ const renderModeMap: Record<RenderMode, ConfigEnv> = {
   HTML: serverOnly,
 };
 
-const passToClient = ["pageProps", "metadata", "initStoreState"];
+const passToClient = ["pageProps", "metadata", "initStoreState", "configHook"];
 if (!isProd) {
   // https://github.com/vikejs/vike-react/issues/25
   passToClient.push("$$typeof");
@@ -60,7 +60,9 @@ const config = {
       effect: ({ configValue }) => {
         const env = renderModeMap[configValue as RenderMode];
         if (!env) {
-          throw new Error(`renderMode must be one of ${Object.keys(renderModeMap).join(", ")}`);
+          throw new Error(
+            `renderMode must be one of ${Object.keys(renderModeMap).join(", ")}`,
+          );
         }
         return { meta: { Page: { env } } };
       },

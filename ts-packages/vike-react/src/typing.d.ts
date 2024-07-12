@@ -6,7 +6,9 @@ type PageProps = Record<string, any>;
 
 declare global {
   type RenderMode = "SPA" | "SSR" | "HTML";
-  type FcWithPageContext = FC<PropsWithChildren<{ pageContext: PageContext; [key: string]: any }>>;
+  type FcWithPageContext = FC<
+    PropsWithChildren<{ pageContext: PageContext; [key: string]: any }>
+  >;
 
   namespace VikePackages {
     interface ConfigVikeReact {
@@ -19,7 +21,10 @@ declare global {
       AppWrapper?: FcWithPageContext;
       Head?: HeadMetadata;
       pageProps?: Record<string, any>;
-      metadata?: Record<StringEnum<"userAgent" | "isMobile" | "locale" | "dataHeadHtml">, any>;
+      metadata?: Record<
+        StringEnum<"userAgent" | "isMobile" | "locale" | "dataHeadHtml">,
+        any
+      >;
       /**
        * <html lang="${locale}">
        * @default 'en'
@@ -71,7 +76,10 @@ declare global {
       renderMode?: RenderMode;
       isr?: boolean | { expiration: number };
       abortReason?: string | { notAdmin: true };
-      metadata?: Record<StringEnum<"userAgent" | "isMobile" | "locale" | "dataHeadHtml">, any>;
+      metadata?: Record<
+        StringEnum<"userAgent" | "isMobile" | "locale" | "dataHeadHtml">,
+        any
+      >;
       /**
        * Whether to stream the page's HTML. Requires Server-Side Rendering (`ssr: true`).
        *
@@ -85,11 +93,17 @@ declare global {
        * **/
       locale: StringEnum<"vi" | "en" | "cn">;
       initStoreState: Record<string, Record<EntityId, any>>;
+      configHook?: ConfigHook;
+      _headAlreadySet?: boolean;
     }
   }
   interface Window {
     __vike?: Record<string, Record<string, unknown>>;
   }
+
+  export type ConfigHook = {
+    head?: HeadMetadata;
+  };
 
   type HeadMetaAuthor = {
     name: string;

@@ -52,9 +52,12 @@
     "techmely-react",
     "vike react"
   ],
+  "exports": {
+    "./config": "./dist/+config.js"
+  },
   "typesVersions": {
     "*": {
-      "+config": [
+      "config": [
         "./dist/_config.d.ts"
       ]
     }

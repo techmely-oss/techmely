@@ -13,6 +13,9 @@
   "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "dependencies": {
+    "@techmely/head": "0.0.0"
+  },
   "peerDependencies": {
     "@techmely/utils": "workspace:*",
     "react": "^18.2.0",
@@ -50,9 +53,12 @@
     "techmely-react",
     "vike react"
   ],
+  "exports": {
+    "./config": "./dist/+config.js"
+  },
   "typesVersions": {
     "*": {
-      "+config": [
+      "config": [
         "./dist/_config.d.ts"
       ]
     }

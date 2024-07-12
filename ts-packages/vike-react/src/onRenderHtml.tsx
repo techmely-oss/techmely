@@ -4,9 +4,10 @@ import { renderToStream } from "react-streaming/server";
 import { dangerouslySkipEscape, escapeInject } from "vike/server";
 import type { OnRenderHtmlAsync, PageContext } from "vike/types";
 import { AppPage } from "./utils/App";
-import generateAppHead from "./utils/AppHead";
+import defaultAppHead from "./utils/AppHead";
 import { AppScriptBody } from "./utils/AppScriptBody";
 import { getMetaHtml } from "./utils/getMetaHtml";
+import { mergeDeep } from "@techmely/utils";
 
 addEcosystemStamp();
 
@@ -32,10 +33,16 @@ const onRenderHtml: OnRenderHtmlAsync = async (pageContext) => {
 };
 
 function getHeadHtml(pageContext: PageContext) {
+  const head: HeadMetadata = mergeDeep(
+    pageContext.config?.Head || {},
+    pageContext.configHook?.head || {},
+  );
   const appHead = dangerouslySkipEscape(
-    renderToString(<StrictMode>{generateAppHead(pageContext)}</StrictMode>),
+    renderToString(<StrictMode>{defaultAppHead(pageContext)}</StrictMode>),
   );
   const lang = pageContext?.metadata?.locale || pageContext?.locale || "en";
+  // biome-ignore lint/performance/noDelete:  Not needed on the client-side, thus we remove it to save KBs sent to the client
+  delete pageContext.configHook;
   return { appHead, lang };
 }
 
