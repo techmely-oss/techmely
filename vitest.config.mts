@@ -6,9 +6,9 @@ import { defineConfig } from "vitest/config";
 const r = (p: string) => path.resolve(path.dirname(fileURLToPath(import.meta.url)), p);
 
 export const alias: AliasOptions = {
-  "@techmely/types": r("./ts-packages/types/src/"),
-  "@techmely/utils": r("./ts-packages/utils/src/"),
-  "@techmely/domain-driven": r("./ts-packages/domain-driven/src/"),
+  "@techmely/types": r("./packages/types/src/"),
+  "@techmely/utils": r("./packages/utils/src/"),
+  "@techmely/domain-driven": r("./packages/domain-driven/src/"),
 };
 
 export default defineConfig({
@@ -17,12 +17,12 @@ export default defineConfig({
   },
   test: {
     globals: true,
-    setupFiles: ["./ts-packages/utils/vitest-setup.ts"],
+    setupFiles: ["./packages/utils/vitest-setup.ts"],
     environment: "happy-dom",
     coverage: {
       reporter: ["lcovonly"],
     },
-    include: ["ts-packages/**/**/**/*.test.?(m)ts?(x)"],
-    exclude: ["node_modules", "ts-packages/**/node_modules", "ts-packages/**/dist"],
+    include: ["packages/**/**/**/*.test.?(m)ts?(x)"],
+    exclude: ["node_modules", "packages/**/node_modules", "packages/**/dist"],
   },
 });

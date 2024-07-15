@@ -1,19 +1,19 @@
 {
   "files": [
     {
-      "path": "ts-packages/utils/dist/index.js",
+      "path": "packages/utils/dist/index.js",
       "maxSize": "6kB"
     },
     {
-      "path": "ts-packages/utils/dist/index.mjs",
+      "path": "packages/utils/dist/index.mjs",
       "maxSize": "5kB"
     },
     {
-      "path": "ts-packages/types/dist/index.mjs",
+      "path": "packages/types/dist/index.mjs",
       "maxSize": "5kB"
     },
     {
-      "path": "ts-packages/types/dist/index.js",
+      "path": "packages/types/dist/index.js",
       "maxSize": "5kB"
     }
   ]

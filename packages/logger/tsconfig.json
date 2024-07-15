@@ -1,0 +1,15 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "outDir": "../../.moon/cache/types/packages/logger"
+  },
+  "include": ["src/**/*", "tests/**/*"],
+  "references": [
+    {
+      "path": "./tsconfig.build.json"
+    },
+    {
+      "path": "../types"
+    }
+  ]
+}

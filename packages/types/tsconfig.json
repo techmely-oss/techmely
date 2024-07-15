@@ -1,0 +1,7 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "outDir": "../../.moon/cache/types/packages/types"
+  },
+  "include": ["src/**/*"]
+}

@@ -1,6 +1,6 @@
 $schema: https://moonrepo.dev/schemas/workspace.json
 projects:
-  - ts-packages/*
+  - packages/*
 vcs:
   defaultBranch: main
   manager: git

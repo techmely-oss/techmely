@@ -8,18 +8,18 @@
     "url": "https://github.com/techmely/techmely.git"
   },
   "workspaces": [
-    "ts-packages/*"
+    "packages/*"
   ],
   "scripts": {
-    "postinstall": "node scripts/postinstall.mjs",
+    "postinstall": "husky",
     "build": "moon :build",
     "clean": "moon :clean",
     "test.unit": "vitest --passWithNoTests",
     "test.unit.run": "NODE_ENV=test vitest run --passWithNoTests --isolate",
     "test.unit.coverage": "vitest --coverage",
     "publish": "moon :publish",
-    "lint.format": "bunx @biomejs/biome check --write ts-packages",
-    "lint.check": "bunx @biomejs/biome check ts-packages",
+    "lint.format": "bunx @biomejs/biome check --write packages",
+    "lint.check": "bunx @biomejs/biome check packages",
     "lint.types": "moon :type-check",
     "lint.bundlesize": "bundlesize",
     "lint.duplicate": "jscpd",
@@ -68,14 +68,14 @@
   },
   "jscpd": {
     "threshold": 0.1,
-    "pattern": "ts-packages/**/src/**/*.ts",
+    "pattern": "packages/**/src/**/*.ts",
     "reporters": [
       "html",
       "console"
     ],
     "ignore": [
       "**/__snapshots__/**",
-      "ts-packages/**/test/**/*.ts"
+      "packages/**/test/**/*.ts"
     ],
     "absolute": true,
     "gitignore": true

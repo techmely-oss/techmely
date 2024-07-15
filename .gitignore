@@ -568,7 +568,7 @@ $RECYCLE.BIN/
 .turbo
 report
 dist
-ts-packages/nuxt-partytown/public/partytown
+packages/nuxt-partytown/public/partytown
 
 # moon
 .moon/cache

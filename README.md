@@ -20,7 +20,7 @@
     ·
     <a href="https://techmely.com/essential-packages">Website</a>
     ·
-    <a href="https://github.com/techmely/essential-ts-packages/issues">Issues</a>
+    <a href="https://github.com/techmely/essential-packages/issues">Issues</a>
   </p>
 </p>
 

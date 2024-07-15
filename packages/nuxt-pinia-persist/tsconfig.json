@@ -1,0 +1,16 @@
+{
+  "extends": "./playground/.nuxt/tsconfig.json",
+  "compilerOptions": {
+    "noImplicitAny": false,
+    "useUnknownInCatchVariables": false,
+    "outDir": "../../.moon/cache/types/packages/nuxt-pinia-persist"
+  },
+  "references": [
+    {
+      "path": "../utils"
+    },
+    {
+      "path": "../vue-pinia-persist"
+    }
+  ]
+}

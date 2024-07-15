@@ -29,15 +29,15 @@
     "formatWithErrors": false
   },
   "files": {
-    "include": ["ts-packages", "scripts"],
+    "include": ["packages", "scripts"],
     "ignore": [
       "node_modules",
       "coverage",
       "dist",
-      "ts-packages/**/node_modules",
-      "ts-packages/**/dist",
+      "packages/**/node_modules",
+      "packages/**/dist",
       "partytown",
-      "ts-packages/**/**/*.d.ts",
+      "packages/**/**/*.d.ts",
       ".vscode"
     ]
   }

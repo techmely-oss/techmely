@@ -3,46 +3,46 @@
   "files": [],
   "references": [
     {
-      "path": "ts-packages/auth"
+      "path": "packages/auth"
     },
     {
-      "path": "ts-packages/cache"
+      "path": "packages/cache"
     },
     {
-      "path": "ts-packages/domain-driven"
+      "path": "packages/domain-driven"
     },
     {
-      "path": "ts-packages/hono"
+      "path": "packages/hono"
     },
     {
-      "path": "ts-packages/http"
+      "path": "packages/http"
     },
     {
-      "path": "ts-packages/logger"
+      "path": "packages/logger"
     },
     {
-      "path": "ts-packages/metrics"
+      "path": "packages/metrics"
     },
     {
-      "path": "ts-packages/nuxt-partytown"
+      "path": "packages/nuxt-partytown"
     },
     {
-      "path": "ts-packages/nuxt-pinia-persist"
+      "path": "packages/nuxt-pinia-persist"
     },
     {
-      "path": "ts-packages/rate-limit"
+      "path": "packages/rate-limit"
     },
     {
-      "path": "ts-packages/types"
+      "path": "packages/types"
     },
     {
-      "path": "ts-packages/usage-limit"
+      "path": "packages/usage-limit"
     },
     {
-      "path": "ts-packages/utils"
+      "path": "packages/utils"
     },
     {
-      "path": "ts-packages/vue-pinia-persist"
+      "path": "packages/vue-pinia-persist"
     }
   ]
 }

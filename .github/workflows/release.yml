@@ -4,7 +4,7 @@ on:
   push:
     paths:
       - '.changeset/**'
-      - 'ts-packages/**'
+      - 'packages/**'
     branches:
       - main
 
