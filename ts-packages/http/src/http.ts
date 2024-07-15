@@ -103,6 +103,23 @@ export class Http {
       hooks,
       signal: this.#abortController.signal,
     };
+
+    if (typeof this.#input !== 'string' && !(this.#input instanceof URL || this.#input instanceof globalThis.Request)) {
+			throw new TypeError('`input` must be a string, URL, or Request');
+		}
+
+    if (this.#options.baseUrl && typeof this.#input === 'string') {
+      if (this.#input.startsWith('/')) {
+				throw new Error('`input` must not begin with a slash when using `prefixUrl`');
+			}
+
+			if (typeof this.#options.baseUrl === 'string' && !this.#options.baseUrl.endsWith('/')) {
+				this.#options.baseUrl += '/';
+			}
+
+			this.#input = this.#options.baseUrl + this.#input     ;
+    }
+
     this.#options.signal?.addEventListener("abort", () => {
       this.#abortController.abort(this.#options.signal?.reason);
     });

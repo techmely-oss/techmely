@@ -20,7 +20,9 @@
     "directory": "dist",
     "tag": "latest"
   },
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "dependencies": {
     "@techmely/utils": "workspace:*",
     "base-x": "^5.0.0"
@@ -43,5 +45,8 @@
       "url": "https://www.patreon.com/harrytran998"
     }
   ],
-  "keywords": ["techmely", "domain driven design"]
+  "keywords": [
+    "techmely",
+    "domain driven design"
+  ]
 }

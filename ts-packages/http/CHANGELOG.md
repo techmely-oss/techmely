@@ -1,5 +1,11 @@
 ## 1.0.0
 
+## 1.2.12
+
+### Patch Changes
+
+- Fix missing base url in create http option
+
 ## 1.2.11
 
 ### Patch Changes
