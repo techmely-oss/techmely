@@ -17,7 +17,7 @@
   "files": ["dist"],
   "dependencies": {
     "@nuxt/kit": "3.12.3",
-    "@techmely/utils": "workspace:*",
+    "@techmely/utils": "^3.3.0",
     "@techmely/vue-pinia-persist": "workspace:*",
     "defu": "^6.1.4"
   },

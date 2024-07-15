@@ -1,8 +1,0 @@
-type: "library"
-language: "typescript"
-
-tasks:
-  build:
-    options:
-      mergeArgs: "replace"
-    args: "--dts --config tsup.config.ts"

@@ -16,7 +16,7 @@
   "types": "dist/index.d.ts",
   "files": ["dist"],
   "dependencies": {
-    "@techmely/utils": "workspace:*"
+    "@techmely/utils": "^3.3.0"
   },
   "peerDependencies": {
     "pinia": "^2.1.7",

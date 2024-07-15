@@ -16,13 +16,9 @@
   "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "files": [
-    "dist",
-    "README.md",
-    "CHANGELOG.md"
-  ],
+  "files": ["dist", "README.md", "CHANGELOG.md"],
   "peerDependencies": {
-    "@techmely/utils": "workspace:*",
+    "@techmely/utils": "^3.3.0",
     "@techmely/auth": "workspace:*",
     "valibot": "0.35.0",
     "jose": "^5.6.2",

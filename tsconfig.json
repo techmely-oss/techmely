@@ -9,9 +9,6 @@
       "path": "packages/cache"
     },
     {
-      "path": "packages/domain-driven"
-    },
-    {
       "path": "packages/hono"
     },
     {
@@ -37,9 +34,6 @@
     },
     {
       "path": "packages/usage-limit"
-    },
-    {
-      "path": "packages/utils"
     },
     {
       "path": "packages/vue-pinia-persist"

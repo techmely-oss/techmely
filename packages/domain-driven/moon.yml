@@ -1,8 +1,0 @@
-type: "library"
-language: "typescript"
-
-tasks:
-  build:
-    options:
-      mergeArgs: "replace"
-    args: "src/index.ts --clean --format cjs,esm --dts --tsconfig tsconfig.build.json"
