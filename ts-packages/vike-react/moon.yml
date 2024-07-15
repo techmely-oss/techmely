@@ -1,8 +1,0 @@
-type: "library"
-language: "typescript"
-
-tasks:
-  build:
-    options:
-      mergeArgs: "replace"
-    args: "--entry src/+config.ts --entry src/index.ts --entry src/useData.ts --entry src/usePageContext.ts --entry src/onRenderClient.tsx --entry src/onRenderHtml.tsx --sourcemap --clean --dts --format esm --tsconfig tsconfig.build.json"

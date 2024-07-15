@@ -42,15 +42,6 @@
       "path": "ts-packages/utils"
     },
     {
-      "path": "ts-packages/vike-island"
-    },
-    {
-      "path": "ts-packages/vike-react"
-    },
-    {
-      "path": "ts-packages/vike-react-query"
-    },
-    {
       "path": "ts-packages/vue-pinia-persist"
     }
   ]
